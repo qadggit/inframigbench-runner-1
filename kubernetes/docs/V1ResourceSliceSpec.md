@@ -1,0 +1,5 @@
+# V1ResourceSliceSpec
+**devices** | [**list[V1Device]**](V1Device.md) | Devices lists some or all of the devices in this pool.  Must not have more than 128 entries. If any device uses taints or consumes counters the limit is 64.  Only one of Devices and SharedCounters can be set in a ResourceSlice. | [optional] 
+**driver** | **str** | Driver identifies the DRA driver providing the capacity information. A field selector can be used to list only ResourceSlice objects with a certain driver name.  Must be a DNS subdomain and should end with a DNS domain owned by the vendor of the driver. It should use only lower case characters. This field is immutable. | 
+**pool** | [**V1ResourcePool**](V1ResourcePool.md) |  | 
+**shared_counters** | [**list[V1CounterSet]**](V1CounterSet.md) | SharedCounters defines a list of counter sets, each of which has a name and a list of counters available.  The names of the counter sets must be unique in the ResourcePool.  Only one of Devices and SharedCounters can be set in a ResourceSlice.  The maximum number of counter sets is 8. | [optional] 
